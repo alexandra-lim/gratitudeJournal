@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Quotes from './Quotes';
+import Quotes from './Quotes';
 
 class JournalForm extends Component {
 	render() {
@@ -8,8 +8,8 @@ class JournalForm extends Component {
 			firstThanks,
 			secondThanks,
 			thirdThanks,
-            handleClick,
-            date
+			handleClick,
+			date
 		} = this.props;
 
 		return (
@@ -18,11 +18,7 @@ class JournalForm extends Component {
 					<h2>What are you grateful for today?</h2>
 
 					<label htmlFor='date'>Date</label>
-                    <input 
-                        type='date'
-                        name='date' 
-                        onChange={handleChange} 
-                        value={date}/>
+					<input type='date' name='date' onChange={handleChange} value={date} />
 
 					<label htmlFor='firstThanks'>1.</label>
 					<input
@@ -54,7 +50,7 @@ class JournalForm extends Component {
 					<button onClick={handleClick}>Log this entry</button>
 				</form>
 
-				{/* <Quotes /> */}
+				<Quotes />
 			</div>
 		);
 	}
