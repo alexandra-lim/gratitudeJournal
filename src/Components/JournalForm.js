@@ -1,59 +1,63 @@
-import React, {Component} from 'react';
-import Quotes from './Quotes';
+import React, { Component } from 'react';
+// import Quotes from './Quotes';
 
 class JournalForm extends Component {
-    render() {
-        const {handleChange, date, firstThanks, secondThanks, thirdThanks, handleClick} = this.props;
+	render() {
+		const {
+			handleChange,
+			firstThanks,
+			secondThanks,
+			thirdThanks,
+            handleClick,
+            date
+		} = this.props;
 
-        return (
-            <div>
+		return (
+			<div>
+				<form action=''>
+					<h2>What are you grateful for today?</h2>
 
-                <form action="submit">
-                    <h2>What are three things you are grateful for today?</h2>
-                    
-                    <label htmlFor="date">Date</label>
-                    <input
-                        type="text"
-                        name="date" 
-                        placeholder="Date" 
-                        onChange={handleChange}
-                        value={date}
-                    />
-    
-                    <label htmlFor="firstThanks">1.</label>    
+					<label htmlFor='date'>Date</label>
                     <input 
-                        type="text" 
-                        name="firstThanks" 
-                        placeholder="Ex. I am grateful for Dug's company"
-                        onChange={handleChange}
-                        value={firstThanks}
-                    />
-    
-                    <label htmlFor="secondThanks">2.</label>
-                    <input 
-                        type="text" 
-                        name="secondThanks" 
-                        placeholder="Ex. I am grateful for Dug's company"
-                        onChange={handleChange}
-                        value={secondThanks}
-                    />
-    
-                    <label htmlFor="thirdThanks">3.</label>
-                    <input 
-                        type="text" 
-                        name="thirdThanks" 
-                        placeholder="Ex. I am grateful for Dug's company"
-                        onChange={handleChange}
-                        value={thirdThanks}
-                    />
-    
-                    <button onClick={handleClick}>Log this entry</button>
-                </form>
-    
-                <Quotes />
-            </div>
-        )
-    }
+                        type='date'
+                        name='date' 
+                        onChange={handleChange} 
+                        value={date}/>
+
+					<label htmlFor='firstThanks'>1.</label>
+					<input
+						type='text'
+						name='firstThanks'
+						placeholder="Ex. I am grateful for Dug's company"
+						onChange={handleChange}
+						value={firstThanks}
+					/>
+
+					<label htmlFor='secondThanks'>2.</label>
+					<input
+						type='text'
+						name='secondThanks'
+						placeholder="Ex. I am grateful for Dug's company"
+						onChange={handleChange}
+						value={secondThanks}
+					/>
+
+					<label htmlFor='thirdThanks'>3.</label>
+					<input
+						type='text'
+						name='thirdThanks'
+						placeholder="Ex. I am grateful for Dug's company"
+						onChange={handleChange}
+						value={thirdThanks}
+					/>
+
+					<button onClick={handleClick}>Log this entry</button>
+				</form>
+
+				{/* <Quotes /> */}
+			</div>
+		);
+	}
 }
 
 export default JournalForm;
