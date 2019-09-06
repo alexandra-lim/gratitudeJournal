@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import firebase from './firebase';
-import JournalForm from './JournalForm';
+import JournalForm from './Components/JournalForm';
+import JournalEntry from './Components/JournalEntry';
 import './App.css';
 
 // set state
@@ -24,15 +25,13 @@ class App extends Component {
       const data = response.val();
       for (let key in data) {
         newState.push({
-          entry: data[key],
+          log: data[key],
           id: key
         });
       }
       this.setState({
         journal: newState
       });
-
-      console.log(response.val());
     });
   };
 
@@ -47,42 +46,47 @@ class App extends Component {
   handleClick = (event) => {
     event.preventDefault();
     this.state.dbRef.push({
-      'date': this.state.date,
-      'firstThanks': this.state.firstThanks,
-      'secondThanks': this.state.secondThanks,
-      'thirdThanks': this.state.thirdThanks
+      date: this.state.date,
+      firstThanks: this.state.firstThanks,
+      secondThanks: this.state.secondThanks,
+      thirdThanks: this.state.thirdThanks
     });
     this.setState ({
       date: '',
       firstThanks: '',
       secondThanks: '',
       thirdThanks: '',
-    })
+    });
   }
 
+  // delete journal entry
+  deleteEntry = (entryId) => {
+    this.state.dbRef.child(entryId).remove();
+  }
+
+  // render on page
   render() {
     return (
       <div className="App">
         <h1>Gratitude Journal</h1>
           <JournalForm 
-            handleChange={this.handleChange} 
-            handleClick={this.handleClick} 
+            handleChange = {this.handleChange} 
+            handleClick = {this.handleClick} 
           />
 
-          <ul>
-            {this.state.journal.map(entry => {
-              return (
-                <li>
-                  <h2>{entry.entry.date}</h2>
-                  <ol>
-                    <li>{entry.entry.firstThanks}</li>
-                    <li>{entry.entry.secondThanks}</li>
-                    <li>{entry.entry.thirdThanks}</li>
-                  </ol>
-                </li>
-              )
-            })}
-          </ul>
+{/* journal entry */}
+      {this.state.journal.map(entry => {
+        return (
+          <JournalEntry 
+            key = {entry.id}
+            date = {entry.log.date}
+            firstThanks = {entry.log.firstThanks}
+            secondThanks = {entry.log.secondThanks}
+            thirdThanks = {entry.log.thirdThanks}
+            removeEntry = {() => this.deleteEntry(entry.id)}
+          />
+        )
+      })}
       </div>
     );
   }
