@@ -1,0 +1,14 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $baseFont;
+}
+
+h1 {
+    color: $darkBlue;
+    font-family: $headingFont;
+    text-transform: lowercase;
+    font-size: calc(3.2rem + (72 - 32) * ((100vw - 320px) / (1300 - 320)));
+  }
