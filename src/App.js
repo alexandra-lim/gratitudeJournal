@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import firebase from './firebase';
 import JournalForm from './Components/JournalForm';
 import JournalEntry from './Components/JournalEntry';
-import './App.css';
+import './App.scss';
 
 // set state
 class App extends Component {
