@@ -14,7 +14,8 @@ class App extends Component {
 			date: '',
 			firstThanks: '',
 			secondThanks: '',
-			thirdThanks: ''
+      thirdThanks: '',
+      formChanged: false,
 		};
 	}
 
@@ -62,7 +63,7 @@ class App extends Component {
 	// delete journal entry
 	deleteEntry = entryId => {
 		this.state.dbRef.child(entryId).remove();
-	};
+  };
 
 	// render on page
 	render() {

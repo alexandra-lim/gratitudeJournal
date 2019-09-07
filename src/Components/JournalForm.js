@@ -14,7 +14,7 @@ class JournalForm extends Component {
 
 		return (
 			<div>
-				<form action=''>
+				<form action='submit' onClick={handleClick}>
 					<h2>What are you grateful for today?</h2>
 
 					<label htmlFor='date'>Date</label>
@@ -47,7 +47,7 @@ class JournalForm extends Component {
 						value={thirdThanks}
 					/>
 
-					<button onClick={handleClick}>Log this entry</button>
+					<button>Log this entry</button>
 				</form>
 
 				<Quotes />

@@ -10,17 +10,20 @@ class Quotes extends Component {
 	}
 
 	componentDidMount() {
-		Axios.get(
-			'https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand'
-		).then(res => {
+		Axios.get('https://api.quotable.io/random').then(res => {
 			console.log(res);
+			const results = res.data;
+			this.setState({
+				quotes: results
+			});
 		});
 	}
 
 	render() {
 		return (
-			<div className='App'>
-				<h3>Quotes?</h3>
+			<div>
+				<blockquote>{this.state.quotes.content}</blockquote>
+				<p>{this.state.quotes.author}</p>
 			</div>
 		);
 	}
