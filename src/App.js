@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from './firebase';
+import Header from './Components/Header';
 import JournalForm from './Components/JournalForm';
 import JournalEntry from './Components/JournalEntry';
 import Footer from './Components/Footer';
@@ -46,8 +47,8 @@ class App extends Component {
 
 	// input validation
 	validate = () => {
-		let inputError = '';
-
+    let inputError = '';
+  
 		if (
 			this.state.date.length === 0 ||
 			this.state.firstThanks.length === 0 ||
@@ -96,7 +97,8 @@ class App extends Component {
 		return (
 			<div className='wrapper'>
 				<div className='App'>
-					<h1>Gratitude Journal</h1>
+
+          <Header />
 
 					<JournalForm
 						handleChange={this.handleChange}

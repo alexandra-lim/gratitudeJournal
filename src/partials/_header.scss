@@ -1,0 +1,39 @@
+header {
+	h1,
+	h2 {
+		background: linear-gradient(120deg, #2c3e50, #3498db);
+		background-clip: text;
+		color: transparent;
+		font-family: $headingFont;
+		text-transform: lowercase;
+		letter-spacing: 1.5px;
+		font-size: calc(4rem + (72 - 40) * ((100vw - 320px) / (1300 - 320)));
+        line-height: 1;
+        text-align: right;
+	}
+	h1 {
+		margin-bottom: 0;
+		position: relative;
+	}
+	h2 {
+		margin-top: 0%;
+		font-weight: 400;
+		font-size: calc(2.4rem + (54 - 24) * ((100vw - 320px) / (1300 - 320)));
+        position: relative;
+        line-height: 1.2;
+	}
+}
+
+// header h1::after,
+// header h2::after {
+// 	content: '';
+// 	display: block;
+// 	height: 0.5rem;
+// 	background: linear-gradient(120deg, #4CA1AF, #C4E0E5);
+// 	z-index: -10;
+// 	position: absolute;
+// 	top: 79%;
+// 	left: 60%;
+// 	width: 75%;
+// 	transform: translateX(-50%) skew(-50deg);
+// }

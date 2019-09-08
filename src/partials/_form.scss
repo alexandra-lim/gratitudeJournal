@@ -1,3 +1,40 @@
-// input {
-//     width: 100%;
-// }
+.journalForm {
+	padding: 5%;
+	border-radius: 5px;
+	h2 {
+		margin-top: 0;
+	}
+}
+
+form {
+	border: 1px solid red;
+	display: flex;
+	flex-wrap: wrap;
+	h2 {
+		margin: 0 auto;
+		color: $darkBlue;
+	}
+}
+
+label {
+	width: 10%;
+}
+
+input {
+	width: 90%;
+	margin-bottom: 2%;
+	border: none;
+	background: transparent;
+}
+
+input[type='text'] {
+	border-bottom: 1px solid $black;
+}
+
+button {
+	display: inline block;
+	margin: 0 auto;
+	border: 1px solid $darkBlue;
+	padding: 2% 3%;
+	font-size: 1.4rem;
+}
