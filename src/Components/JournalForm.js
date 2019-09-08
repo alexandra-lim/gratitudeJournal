@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Quotes from './Quotes';
 
+// input validation
+
 class JournalForm extends Component {
 	render() {
 		const {
@@ -9,12 +11,13 @@ class JournalForm extends Component {
 			secondThanks,
 			thirdThanks,
 			handleClick,
-			date
+			date, 
+			inputError
 		} = this.props;
 
 		return (
 			<div>
-				<form action='submit' onClick={handleClick}>
+				<form action='submit'>
 					<h2>What are you grateful for today?</h2>
 
 					<label htmlFor='date'>Date</label>
@@ -47,10 +50,12 @@ class JournalForm extends Component {
 						value={thirdThanks}
 					/>
 
-					<button>Log this entry</button>
+					<p className="errorMessage">{inputError}</p>
+
+					<button onClick={handleClick}>Log this entry</button>
 				</form>
 
-				<Quotes />
+				{/* <Quotes /> */}
 			</div>
 		);
 	}

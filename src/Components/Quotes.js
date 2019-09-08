@@ -9,9 +9,9 @@ class Quotes extends Component {
 		};
 	}
 
+    // API call to Quotes API
 	componentDidMount() {
 		Axios.get('https://api.quotable.io/random').then(res => {
-			console.log(res);
 			const results = res.data;
 			this.setState({
 				quotes: results
@@ -21,10 +21,10 @@ class Quotes extends Component {
 
 	render() {
 		return (
-			<div>
-				<blockquote>{this.state.quotes.content}</blockquote>
+			<blockquote>
+				<h3>{this.state.quotes.content}</h3>
 				<p>{this.state.quotes.author}</p>
-			</div>
+			</blockquote>
 		);
 	}
 }
