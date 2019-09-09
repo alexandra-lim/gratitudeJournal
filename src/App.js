@@ -90,7 +90,11 @@ class App extends Component {
 
 	// delete journal entry
 	deleteEntry = entryId => {
-		this.state.dbRef.child(entryId).remove();
+		let yesDelete = window.confirm('Are you sure you want to delete this?');
+
+		if (yesDelete === true) {
+			this.state.dbRef.child(entryId).remove();
+		}
 	};
 
 	// render on page

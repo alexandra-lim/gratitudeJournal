@@ -26,7 +26,6 @@ form {
 label {
 	width: calc(15% - 2%);
 	font-size: calc(1.4rem + (20 - 14) * ((100vw - 320px) / (1300 - 320)));
-	margin-right: 2%;
 	font-style: italic;
 }
 
@@ -46,6 +45,7 @@ input[type='date'] {
 	width: 85%;
 	margin-top: 0;
 	margin-bottom: 5%;
+	padding-left: 10px;
 }
 
 input[type='text'] {
@@ -62,8 +62,8 @@ input[type='text'] {
 	font-weight: 700;
 }
 
-button {
-	display: inline block;
+form button {
+	transition: 0.5s linear;
 	margin: 0 auto;
 	margin-top: 5%;
 	border: none;

@@ -14,4 +14,10 @@ body {
 	position: relative;
 }
 
-
+a {
+	color: $darkBlue;
+	text-decoration: none;
+	&:hover, &:focus {
+		color: $lightBlue;
+	}
+}

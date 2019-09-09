@@ -27,7 +27,7 @@ class JournalForm extends Component {
 					<input
 						type='text'
 						name='firstThanks'
-						placeholder="ex. Dug the Pug"
+						placeholder="ex. Dug the Pug visits HackerYou"
 						onChange={handleChange}
 						value={firstThanks}
 					/>
@@ -52,7 +52,7 @@ class JournalForm extends Component {
 
 					<p className='errorMessage'>{inputError}</p>
 
-					<button onClick={handleClick}>Log this entry</button>
+					<button onClick={handleClick}>Log entry</button>
 				</form>
 
 				<Quotes />

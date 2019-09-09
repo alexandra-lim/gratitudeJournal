@@ -1,0 +1,47 @@
+.entries {
+	border: 7px solid transparent;
+	border-image: linear-gradient(
+		to bottom right,
+		rgb(44, 62, 80),
+		rgb(52, 152, 219)
+	);
+	border-image-slice: 1;
+	margin: 8% 0;
+	list-style: none;
+	padding: 5%;
+	position: relative;
+}
+
+.eachEntry {
+	h3 {
+		font-family: $headingFont;
+		line-height: 1;
+		text-align: center;
+		color: #000;
+		font-size: calc(2rem + (40 - 20) * ((100vw - 320px) / (1300 - 320)));
+	}
+}
+
+ol {
+    padding: 0 10%;
+	li {
+		font-size: calc(1.4rem + (20 - 14) * ((100vw - 320px) / (1300 - 320)));
+        margin-bottom: 5%;
+        // list-style-position: inside;
+	}
+}
+
+ul button {
+	margin: 1.5% 1.5% 0 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border: none;
+	background: none;
+	font-size: calc(1.8rem + (36 - 18) * ((100vw - 320px) / (1300 - 320)));
+	transition: 0.3s linear;
+	&:hover,
+	&:focus {
+		color: $lightBlue;
+	}
+}

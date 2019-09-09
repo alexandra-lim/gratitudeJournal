@@ -1,21 +1,33 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const JournalEntry = (
-    {date, firstThanks, secondThanks, thirdThanks, removeEntry, uniqueId}
-) => {
-    return (
-        <ul>
-            <li key={uniqueId}>
-                <button onClick={removeEntry}>Delete</button>
-                <h2>{date}</h2>
-                <ol>
-                    <li>{firstThanks}</li>
-                    <li>{secondThanks}</li>
-                    <li>{thirdThanks}</li>
-                </ol>
-            </li>
-        </ul>
-    );
-}
+const JournalEntry = ({
+	date,
+	firstThanks,
+	secondThanks,
+	thirdThanks,
+	removeEntry,
+	uniqueId
+}) => {
+	return (
+		<ul className='entries'>
+			<li className='eachEntry' key={uniqueId}>
+				<button onClick={removeEntry}>
+					<FontAwesomeIcon icon={faTimes} />
+				</button>
+
+				<div className='content'>
+					<h3>On {date}, I was grateful for...</h3>
+					<ol>
+						<li>{firstThanks}</li>
+						<li>{secondThanks}</li>
+						<li>{thirdThanks}</li>
+					</ol>
+				</div>
+			</li>
+		</ul>
+	);
+};
 
 export default JournalEntry;
