@@ -4,7 +4,12 @@ import Header from './Components/Header';
 import JournalForm from './Components/JournalForm';
 import JournalEntry from './Components/JournalEntry';
 import Footer from './Components/Footer';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import './App.scss';
+
+// delete confirmation sweet alert
+// const MySwal = withReactContent(Swal);
 
 // set state
 class App extends Component {
@@ -13,6 +18,7 @@ class App extends Component {
 		this.state = {
 			dbRef: firebase.database().ref(),
 			journal: [],
+			user: null,
 			date: '',
 			firstThanks: '',
 			secondThanks: '',
@@ -90,11 +96,20 @@ class App extends Component {
 
 	// delete journal entry
 	deleteEntry = entryId => {
-		let yesDelete = window.confirm('Are you sure you want to delete this?');
-
-		if (yesDelete === true) {
-			this.state.dbRef.child(entryId).remove();
-		}
+		Swal.fire({
+			title: 'Are you sure?',
+			text: "You won't be able to revert this!",
+			type: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, delete it!'
+		}).then(result => {
+			if (result.value) {
+				this.state.dbRef.child(entryId).remove();
+				Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+			}
+		});
 	};
 
 	// render on page
@@ -113,6 +128,7 @@ class App extends Component {
 						thirdThanks={this.state.thirdThanks}
 						inputError={this.state.inputError}
 					/>
+
 					{/* journal entry */}
 					{this.state.journal.map(entry => {
 						return (
@@ -126,6 +142,7 @@ class App extends Component {
 							/>
 						);
 					})}
+
 					{/* Footer */}
 					<Footer />
 				</div>
