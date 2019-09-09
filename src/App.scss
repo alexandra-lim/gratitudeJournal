@@ -1,5 +1,8 @@
 @import './partials/setup';
-@import './partials/typography';
+@import './partials/partials';
+@import './partials/mixins';
 @import './partials/global';
 @import './partials/header';
 @import './partials/form';
+@import './partials/entry';
+@import './partials/footer';

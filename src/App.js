@@ -47,19 +47,19 @@ class App extends Component {
 
 	// input validation
 	validate = () => {
-    let inputError = '';
-  
+		let inputError = '';
+
 		if (
 			this.state.date.length === 0 ||
 			this.state.firstThanks.length === 0 ||
 			this.state.secondThanks.length === 0 ||
 			this.state.thirdThanks.length === 0
 		) {
-			inputError = 'Input fields cannot be blank';
+			inputError = 'Input fields cannot be blank.';
 		}
 
 		if (inputError) {
-			this.setState({inputError});
+			this.setState({ inputError });
 			return false;
 		}
 
@@ -75,7 +75,8 @@ class App extends Component {
 				date: '',
 				firstThanks: '',
 				secondThanks: '',
-				thirdThanks: ''
+				thirdThanks: '',
+				inputError: ''
 			});
 
 			this.state.dbRef.push({
@@ -97,8 +98,7 @@ class App extends Component {
 		return (
 			<div className='wrapper'>
 				<div className='App'>
-
-          <Header />
+					<Header />
 
 					<JournalForm
 						handleChange={this.handleChange}

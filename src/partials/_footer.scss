@@ -1,0 +1,9 @@
+footer {
+	text-align: center;
+	margin-top: 4%;
+	p {
+        margin: 0 auto;
+        font-family: $headingFont;
+		font-size: calc(1.2rem + (16 - 12) * ((100vw - 320px) / (1300 - 320)));
+	}
+}

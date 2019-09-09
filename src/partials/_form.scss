@@ -1,40 +1,111 @@
 .journalForm {
-	padding: 5%;
-	border-radius: 5px;
-	h2 {
-		margin-top: 0;
-	}
+	border: 7px solid transparent;
+	border-image: linear-gradient(
+		to top left,
+		rgb(44, 62, 80),
+		rgb(52, 152, 219)
+	);
+	border-image-slice: 1;
+	padding: 7%;
 }
 
 form {
-	border: 1px solid red;
 	display: flex;
 	flex-wrap: wrap;
+	margin: 5% 0;
 	h2 {
-		margin: 0 auto;
-		color: $darkBlue;
+		font-family: $headingFont;
+		line-height: 1;
+		margin-top: 0;
+		text-align: center;
+		color: #000;
+		font-size: calc(2.4rem + (44 - 24) * ((100vw - 320px) / (1300 - 320)));
 	}
 }
 
 label {
-	width: 10%;
+	width: calc(15% - 2%);
+	font-size: calc(1.4rem + (20 - 14) * ((100vw - 320px) / (1300 - 320)));
+	margin-right: 2%;
+	font-style: italic;
+}
+
+.date {
+	margin-bottom: 5%;
 }
 
 input {
-	width: 90%;
-	margin-bottom: 2%;
+	width: 100%;
+	margin-bottom: 5%;
 	border: none;
 	background: transparent;
+	font-size: calc(1.4rem + (20 - 14) * ((100vw - 320px) / (1300 - 320)));
+}
+
+input[type='date'] {
+	width: 85%;
+	margin-top: 0;
+	margin-bottom: 5%;
 }
 
 input[type='text'] {
+	width: 100%;
 	border-bottom: 1px solid $black;
+	margin-top: 2%;
+	margin-bottom: 5%;
+}
+
+.errorMessage {
+	margin: 2% 0;
+	color: $lightBlue;
+	font-size: calc(1.2rem + (16 - 12) * ((100vw - 320px) / (1300 - 320)));
+	font-weight: 700;
 }
 
 button {
 	display: inline block;
 	margin: 0 auto;
-	border: 1px solid $darkBlue;
-	padding: 2% 3%;
+	margin-top: 5%;
+	border: none;
+	padding: 5% 6%;
+	border-radius: 10px 2px;
+	color: $white;
+	font-weight: 700;
 	font-size: 1.4rem;
+	letter-spacing: 1.25px;
+	@include linearGradient(to top left);
+	&:hover,
+	&:focus {
+		@include linearGradient(to bottom right);
+	}
+}
+
+blockquote {
+	font-family: $headingFont;
+	font-size: calc(1.4rem + (18 - 14) * ((100vw - 320px) / (1300 - 320)));
+	font-style: italic;
+	position: relative;
+	margin: 0;
+	padding: 5% 8%;
+	.author {
+		margin-top: 10%;
+		margin-bottom: 0;
+		text-align: right;
+	}
+}
+
+blockquote::before {
+	content: '“';
+	font-size: calc(3rem + (80 - 30) * ((100vw - 320px) / (1300 - 320)));
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+blockquote::after {
+	content: '”';
+	font-size: calc(3rem + (80 - 30) * ((100vw - 320px) / (1300 - 320)));
+	position: absolute;
+	bottom: 15%;
+	right: 0;
 }

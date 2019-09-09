@@ -22,8 +22,8 @@ class Quotes extends Component {
 	render() {
 		return (
 			<blockquote>
-				<h3>{this.state.quotes.content}</h3>
-				<p>{this.state.quotes.author}</p>
+				<p className="quote">{this.state.quotes.content}</p>
+				<p className="author">- {this.state.quotes.author}</p>
 			</blockquote>
 		);
 	}

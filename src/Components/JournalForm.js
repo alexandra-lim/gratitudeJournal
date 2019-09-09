@@ -18,14 +18,16 @@ class JournalForm extends Component {
 				<form action='submit'>
 					<h2>What are you grateful for today?</h2>
 
-					<label htmlFor='date'>Date</label>
+					<label htmlFor='date' className='date'>
+						Date:
+					</label>
 					<input type='date' name='date' onChange={handleChange} value={date} />
 
 					<label htmlFor='firstThanks'>1.</label>
 					<input
 						type='text'
 						name='firstThanks'
-						placeholder="Ex. I am grateful for Dug's company"
+						placeholder="ex. Dug the Pug"
 						onChange={handleChange}
 						value={firstThanks}
 					/>
@@ -34,7 +36,7 @@ class JournalForm extends Component {
 					<input
 						type='text'
 						name='secondThanks'
-						placeholder="Ex. I am grateful for Dug's company"
+						placeholder="ex. No TTC delays"
 						onChange={handleChange}
 						value={secondThanks}
 					/>
@@ -43,7 +45,7 @@ class JournalForm extends Component {
 					<input
 						type='text'
 						name='thirdThanks'
-						placeholder="Ex. I am grateful for Dug's company"
+						placeholder="ex. Dinner with friends"
 						onChange={handleChange}
 						value={thirdThanks}
 					/>
@@ -53,7 +55,7 @@ class JournalForm extends Component {
 					<button onClick={handleClick}>Log this entry</button>
 				</form>
 
-				{/* <Quotes /> */}
+				<Quotes />
 			</div>
 		);
 	}
