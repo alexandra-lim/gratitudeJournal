@@ -4,7 +4,7 @@
 }
 
 // Mixin for media queries
-@mixin mediaQuery($size) {
+@mixin mediaQ($size) {
   @if $size == abovePortraitPhone {
     @media (min-width: 480px) { @content; }
   } @else if $size == aboveLandscapePhone {
@@ -13,3 +13,4 @@
     @media (min-width: 940px) { @content; }
   }
 }
+

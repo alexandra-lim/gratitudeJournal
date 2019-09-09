@@ -27,7 +27,6 @@ ol {
 	li {
 		font-size: calc(1.4rem + (20 - 14) * ((100vw - 320px) / (1300 - 320)));
         margin-bottom: 5%;
-        // list-style-position: inside;
 	}
 }
 
@@ -40,6 +39,7 @@ ul button {
 	background: none;
 	font-size: calc(1.8rem + (36 - 18) * ((100vw - 320px) / (1300 - 320)));
 	transition: 0.3s linear;
+	color: $darkBlue;
 	&:hover,
 	&:focus {
 		color: $lightBlue;

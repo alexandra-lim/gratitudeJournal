@@ -24,7 +24,7 @@ form {
 }
 
 label {
-	width: calc(15% - 2%);
+	width: 12%;
 	font-size: calc(1.4rem + (20 - 14) * ((100vw - 320px) / (1300 - 320)));
 	font-style: italic;
 }
@@ -71,7 +71,7 @@ form button {
 	border-radius: 10px 2px;
 	color: $white;
 	font-weight: 700;
-	font-size: 1.4rem;
+	font-size:  calc(1.4rem + (20 - 14) * ((100vw - 320px) / (1300 - 320)));
 	letter-spacing: 1.25px;
 	@include linearGradient(to top left);
 	&:hover,
