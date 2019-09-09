@@ -7,12 +7,17 @@
 	);
 	border-image-slice: 1;
 	padding: 7%;
+
+	@include mediaQ(aboveLandscapePhone) {
+		padding: 5% 7%;
+	}
 }
 
 form {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 5% 0;
+
 	h2 {
 		font-family: $headingFont;
 		line-height: 1;
@@ -20,6 +25,7 @@ form {
 		text-align: center;
 		color: #000;
 		font-size: calc(2.4rem + (44 - 24) * ((100vw - 320px) / (1300 - 320)));
+		width: 100%;
 	}
 }
 
@@ -31,6 +37,10 @@ label {
 
 .date {
 	margin-bottom: 5%;
+
+	@include mediaQ(aboveLandscapePhone) {
+		width: 10%;
+	}
 }
 
 input {
@@ -46,6 +56,10 @@ input[type='date'] {
 	margin-top: 0;
 	margin-bottom: 5%;
 	padding-left: 10px;
+
+	@include mediaQ(abovePortraitPhone) {
+		padding-left: 5px;
+	}
 }
 
 input[type='text'] {
@@ -71,9 +85,14 @@ form button {
 	border-radius: 10px 2px;
 	color: $white;
 	font-weight: 700;
-	font-size:  calc(1.4rem + (20 - 14) * ((100vw - 320px) / (1300 - 320)));
+	font-size: calc(1.4rem + (20 - 14) * ((100vw - 320px) / (1300 - 320)));
 	letter-spacing: 1.25px;
+
 	@include linearGradient(to top left);
+	@include mediaQ(aboveLandscapePhone) {
+		padding: 5% 10%;
+	}
+
 	&:hover,
 	&:focus {
 		@include linearGradient(to bottom right);
@@ -82,7 +101,7 @@ form button {
 
 blockquote {
 	font-family: $headingFont;
-	font-size: calc(1.4rem + (18 - 14) * ((100vw - 320px) / (1300 - 320)));
+	font-size: calc(1.4rem + (20 - 14) * ((100vw - 320px) / (1300 - 320)));
 	font-style: italic;
 	position: relative;
 	margin: 0;

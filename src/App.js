@@ -5,11 +5,8 @@ import JournalForm from './Components/JournalForm';
 import JournalEntry from './Components/JournalEntry';
 import Footer from './Components/Footer';
 import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
+import moment from 'moment';
 import './App.scss';
-
-// delete confirmation sweet alert
-// const MySwal = withReactContent(Swal);
 
 // set state
 class App extends Component {
@@ -18,7 +15,6 @@ class App extends Component {
 		this.state = {
 			dbRef: firebase.database().ref(),
 			journal: [],
-			user: null,
 			date: '',
 			firstThanks: '',
 			secondThanks: '',
@@ -97,17 +93,17 @@ class App extends Component {
 	// delete journal entry
 	deleteEntry = entryId => {
 		Swal.fire({
-			title: 'Are you sure?',
+			title: 'Are you sure you want to delete this entry?',
 			text: "You won't be able to revert this!",
 			type: 'warning',
 			showCancelButton: true,
-			confirmButtonColor: '#3085d6',
+			confirmButtonColor: '#3498db',
 			cancelButtonColor: '#d33',
 			confirmButtonText: 'Yes, delete it!'
 		}).then(result => {
 			if (result.value) {
 				this.state.dbRef.child(entryId).remove();
-				Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+				Swal.fire('Deleted!', 'Your entry has been deleted.', 'success');
 			}
 		});
 	};
@@ -134,7 +130,8 @@ class App extends Component {
 						return (
 							<JournalEntry
 								key={entry.id}
-								date={entry.log.date}
+								// date={new Date(entry.log.date).toDateString()}
+								date={moment(entry.log.date).format('LL')}
 								firstThanks={entry.log.firstThanks}
 								secondThanks={entry.log.secondThanks}
 								thirdThanks={entry.log.thirdThanks}
