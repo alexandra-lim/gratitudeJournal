@@ -9,7 +9,9 @@
 	padding: 7%;
 
 	@include mediaQ(aboveLandscapePhone) {
-		padding: 5% 7%;
+		padding: 3% 5%;
+		margin-left: 5%;
+		width: calc(70% - 5%);
 	}
 }
 
@@ -17,6 +19,10 @@ form {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 5% 0;
+
+	@include mediaQ(aboveLandscapePhone) {
+		margin-bottom: 3%;
+	}
 
 	h2 {
 		font-family: $headingFont;
@@ -33,6 +39,11 @@ label {
 	width: 12%;
 	font-size: calc(1.4rem + (20 - 14) * ((100vw - 320px) / (1300 - 320)));
 	font-style: italic;
+	letter-spacing: 1.25px;
+
+	@include mediaQ(aboveLandscapePhone) {
+		width: 8%;
+	}
 }
 
 .date {
@@ -44,10 +55,10 @@ label {
 }
 
 input {
-	width: 100%;
 	margin-bottom: 5%;
 	border: none;
 	background: transparent;
+	letter-spacing: 1.25px;
 	font-size: calc(1.4rem + (20 - 14) * ((100vw - 320px) / (1300 - 320)));
 }
 
@@ -56,10 +67,6 @@ input[type='date'] {
 	margin-top: 0;
 	margin-bottom: 5%;
 	padding-left: 10px;
-
-	@include mediaQ(abovePortraitPhone) {
-		padding-left: 5px;
-	}
 }
 
 input[type='text'] {
@@ -67,6 +74,11 @@ input[type='text'] {
 	border-bottom: 1px solid $black;
 	margin-top: 2%;
 	margin-bottom: 5%;
+
+	@include mediaQ(aboveLandscapePhone) {
+		width: 90%;
+		margin-top: 0;
+	}
 }
 
 .errorMessage {
@@ -74,9 +86,16 @@ input[type='text'] {
 	color: $lightBlue;
 	font-size: calc(1.2rem + (16 - 12) * ((100vw - 320px) / (1300 - 320)));
 	font-weight: 700;
+	display: block;
+	width: 100%;
+
+	@include mediaQ(aboveLandscapePhone) {
+		margin-top: 1%;
+	}
 }
 
 form button {
+	display: block;
 	transition: 0.5s linear;
 	margin: 0 auto;
 	margin-top: 5%;
@@ -89,8 +108,10 @@ form button {
 	letter-spacing: 1.25px;
 
 	@include linearGradient(to top left);
+
 	@include mediaQ(aboveLandscapePhone) {
-		padding: 5% 10%;
+		padding: 4% 10%;
+		margin-top: 2%;
 	}
 
 	&:hover,
@@ -106,6 +127,10 @@ blockquote {
 	position: relative;
 	margin: 0;
 	padding: 5% 8%;
+
+	@include mediaQ(aboveLandscapePhone) {
+		padding-bottom: 0;
+	}
 	.author {
 		margin-top: 10%;
 		margin-bottom: 0;
@@ -127,4 +152,8 @@ blockquote::after {
 	position: absolute;
 	bottom: 15%;
 	right: 0;
+
+	@include mediaQ(aboveLandscapePhone) {
+		bottom: 5%;
+	}
 }

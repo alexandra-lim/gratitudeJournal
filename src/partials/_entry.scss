@@ -1,3 +1,9 @@
+.journalEntry {
+	@include mediaQ(aboveTabletLandscape) {
+		width: 50%;
+	}
+}
+
 .entries {
 	border: 7px solid transparent;
 	border-image: linear-gradient(
@@ -10,6 +16,10 @@
 	list-style: none;
 	padding: 5%;
 	position: relative;
+
+	@include mediaQ(aboveLandscapePhone) {
+		margin-top: 0;
+	}
 }
 
 .eachEntry {
@@ -18,15 +28,16 @@
 		line-height: 1;
 		text-align: center;
 		color: #000;
-		font-size: calc(2rem + (40 - 20) * ((100vw - 320px) / (1300 - 320)));
+		font-size: calc(2rem + (36 - 20) * ((100vw - 320px) / (1300 - 320)));
 	}
 }
 
 ol {
-    padding: 0 10%;
+	padding: 0 10%;
 	li {
+		letter-spacing: 1.25px;
 		font-size: calc(1.4rem + (20 - 14) * ((100vw - 320px) / (1300 - 320)));
-        margin-bottom: 5%;
+		margin-bottom: 5%;
 	}
 }
 

@@ -112,8 +112,10 @@ class App extends Component {
 	render() {
 		return (
 			<div className='wrapper'>
-				<div className='App'>
-					<Header />
+				<Header />
+
+				<main>
+					<img className='mountainImage' src={require('./assets/mountains.jpg')} alt='Mountain tops cast in a blue light' />
 
 					<JournalForm
 						handleChange={this.handleChange}
@@ -130,7 +132,6 @@ class App extends Component {
 						return (
 							<JournalEntry
 								key={entry.id}
-								// date={new Date(entry.log.date).toDateString()}
 								date={moment(entry.log.date).format('LL')}
 								firstThanks={entry.log.firstThanks}
 								secondThanks={entry.log.secondThanks}
@@ -139,10 +140,10 @@ class App extends Component {
 							/>
 						);
 					})}
+				</main>
 
-					{/* Footer */}
-					<Footer />
-				</div>
+				{/* Footer */}
+				<Footer />
 			</div>
 		);
 	}

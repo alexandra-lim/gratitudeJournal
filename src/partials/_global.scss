@@ -6,7 +6,15 @@ html {
 	max-width: 1400px;
 	width: 85%;
 	height: 100vh;
-    margin: 0 auto;
+	margin: 0 auto;
+
+	@include mediaQ(aboveLandscapePhone) {
+		width: 80%;
+	}
+
+	@include mediaQ(aboveTabletLandscape) {
+		width: 70%;
+	}
 }
 
 body {
@@ -17,7 +25,23 @@ body {
 a {
 	color: $darkBlue;
 	text-decoration: none;
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		color: $lightBlue;
+	}
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.mountainImage {
+	display: none;
+
+	@include mediaQ(aboveLandscapePhone) {
+		display: block;
+		object-fit: cover;
+		width: 30%;
 	}
 }
