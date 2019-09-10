@@ -2,6 +2,10 @@ html {
 	font-size: 62.5%;
 }
 
+body {
+	background: $white;
+}
+
 .wrapper {
 	max-width: 1400px;
 	width: 85%;
@@ -26,16 +30,16 @@ a {
 	color: $darkBlue;
 	text-decoration: none;
 	&:hover,
-	&:focus {
+	&:focus,
+	&:visited {
 		color: $lightBlue;
 	}
 }
 
 .formImage {
 	@include mediaQ(aboveLandscapePhone) {
-		display: flex;
-		flex-wrap: wrap;
 		margin-bottom: 5%;
+		@include flexbox;
 	}
 }
 

@@ -17,7 +17,7 @@ const JournalEntry = ({
 			</button>
 
 			<div className='content'>
-				<h3>On {date}, I was grateful for...</h3>
+				<h3>On {date}, I was grateful for</h3>
 				<ol>
 					<li>{firstThanks}</li>
 					<li>{secondThanks}</li>

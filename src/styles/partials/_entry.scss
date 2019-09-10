@@ -12,13 +12,7 @@
 }
 
 .eachEntry {
-	border: 7px solid transparent;
-	border-image: linear-gradient(
-		to bottom right,
-		rgb(44, 62, 80),
-		rgb(52, 152, 219)
-	);
-	border-image-slice: 1;
+	@include gradientBorder (to bottom right);
 	position: relative;
 	padding: 5%;
 	margin: 8% 0;
@@ -34,9 +28,9 @@
 
 	h3 {
 		font-family: $headingFont;
-		line-height: 1;
+		line-height: 1.2;
 		text-align: center;
-		color: #000;
+		color: $black;
 		font-size: calc(2rem + (28 - 20) * ((100vw - 320px) / (1300 - 320)));
 	}
 }
@@ -45,7 +39,8 @@ ol {
 	padding: 0 10%;
 	li {
 		letter-spacing: 1.25px;
-		font-size: calc(1.4rem + (20 - 14) * ((100vw - 320px) / (1300 - 320)));
+		line-height: 1.5;
+		font-size: calc(1.4rem + (18 - 14) * ((100vw - 320px) / (1300 - 320)));
 		margin-bottom: 5%;
 	}
 }

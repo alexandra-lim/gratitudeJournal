@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import firebase from './firebase';
-import Header from './Components/Header';
-import JournalForm from './Components/JournalForm';
-import JournalEntry from './Components/JournalEntry';
-import Footer from './Components/Footer';
+import firebase from '../firebase';
+import Header from './Header';
+import JournalForm from './JournalForm';
+import JournalEntry from './JournalEntry';
+import Footer from './Footer';
 import Swal from 'sweetalert2';
 import moment from 'moment';
-import './App.scss';
+import '../styles/App.scss';
 
 // set state
 class App extends Component {
@@ -94,12 +94,11 @@ class App extends Component {
 	deleteEntry = entryId => {
 		Swal.fire({
 			title: 'Are you sure you want to delete this entry?',
-			text: "You won't be able to revert this!",
 			type: 'warning',
 			showCancelButton: true,
 			confirmButtonColor: '#3498db',
 			cancelButtonColor: '#d33',
-			confirmButtonText: 'Yes, delete it!'
+			confirmButtonText: 'Yes, delete it!'			
 		}).then(result => {
 			if (result.value) {
 				this.state.dbRef.child(entryId).remove();
@@ -118,7 +117,7 @@ class App extends Component {
 					<section className='formImage'>
 						<img
 							className='mountainImage'
-							src={require('./assets/mountains.jpg')}
+							src={require('../assets/mountains.jpg')}
 							alt='Mountain tops cast in a blue light'
 						/>
 

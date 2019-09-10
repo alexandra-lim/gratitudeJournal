@@ -1,0 +1,39 @@
+// Linear gradient
+@mixin linearGradient($direction) {
+	background: linear-gradient($direction, #2c3e50, #3498db);
+}
+
+// Mixin for media queries
+@mixin mediaQ($size) {
+	@if $size == abovePortraitPhone {
+		@media (min-width: 480px) {
+			@content;
+		}
+	} @else if $size == aboveLandscapePhone {
+		@media (min-width: 768px) {
+			@content;
+		}
+	} @else if $size == aboveTabletLandscape {
+		@media (min-width: 940px) {
+			@content;
+		}
+	}
+}
+
+// Flexbox mixin
+@mixin flexbox {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+// Gradient border
+@mixin gradientBorder ($direction) {
+	border: 7px solid transparent;
+	border-image: linear-gradient(
+		$direction,
+		rgb(44, 62, 80),
+		rgb(52, 152, 219)
+	);
+	border-image-slice: 1;
+}
+

@@ -14,13 +14,11 @@ header {
 	h1 {
         margin-top: 10%;
 		margin-bottom: 0;
-		position: relative;
 	}
 	h2 {
 		margin-top: 0%;
 		font-weight: 400;
 		font-size: calc(2.8rem + (54 - 28) * ((100vw - 320px) / (1300 - 320)));
-        position: relative;
         line-height: 1.2;
 	}
 }
