@@ -115,31 +115,39 @@ class App extends Component {
 				<Header />
 
 				<main>
-					<img className='mountainImage' src={require('./assets/mountains.jpg')} alt='Mountain tops cast in a blue light' />
+					<section className='formImage'>
+						<img
+							className='mountainImage'
+							src={require('./assets/mountains.jpg')}
+							alt='Mountain tops cast in a blue light'
+						/>
 
-					<JournalForm
-						handleChange={this.handleChange}
-						handleClick={this.handleClick}
-						date={this.state.date}
-						firstThanks={this.state.firstThanks}
-						secondThanks={this.state.secondThanks}
-						thirdThanks={this.state.thirdThanks}
-						inputError={this.state.inputError}
-					/>
+						<JournalForm
+							handleChange={this.handleChange}
+							handleClick={this.handleClick}
+							date={this.state.date}
+							firstThanks={this.state.firstThanks}
+							secondThanks={this.state.secondThanks}
+							thirdThanks={this.state.thirdThanks}
+							inputError={this.state.inputError}
+						/>
+					</section>
 
 					{/* journal entry */}
-					{this.state.journal.map(entry => {
-						return (
-							<JournalEntry
-								key={entry.id}
-								date={moment(entry.log.date).format('LL')}
-								firstThanks={entry.log.firstThanks}
-								secondThanks={entry.log.secondThanks}
-								thirdThanks={entry.log.thirdThanks}
-								removeEntry={() => this.deleteEntry(entry.id)}
-							/>
-						);
-					})}
+					<ul className='entries'>
+						{this.state.journal.map(entry => {
+							return (
+								<JournalEntry
+									key={entry.id}
+									date={moment(entry.log.date).format('LL')}
+									firstThanks={entry.log.firstThanks}
+									secondThanks={entry.log.secondThanks}
+									thirdThanks={entry.log.thirdThanks}
+									removeEntry={() => this.deleteEntry(entry.id)}
+								/>
+							);
+						})}
+					</ul>
 				</main>
 
 				{/* Footer */}

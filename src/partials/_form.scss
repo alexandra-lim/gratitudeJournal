@@ -156,4 +156,8 @@ blockquote::after {
 	@include mediaQ(aboveLandscapePhone) {
 		bottom: 5%;
 	}
+
+	@include mediaQ(aboveTabletLandscape) {
+		bottom: -7%;
+	}
 }

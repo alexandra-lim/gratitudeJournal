@@ -31,9 +31,12 @@ a {
 	}
 }
 
-main {
-	display: flex;
-	flex-wrap: wrap;
+.formImage {
+	@include mediaQ(aboveLandscapePhone) {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 5%;
+	}
 }
 
 .mountainImage {
