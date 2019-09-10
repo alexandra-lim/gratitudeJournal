@@ -6,6 +6,7 @@ import JournalEntry from './JournalEntry';
 import Footer from './Footer';
 import Swal from 'sweetalert2';
 import moment from 'moment';
+import { animateScroll as scroll } from 'react-scroll';
 import '../styles/App.scss';
 
 // set state
@@ -68,6 +69,11 @@ class App extends Component {
 		return true;
 	};
 
+	// scroll to bottom
+	scrollToBottom = () => {
+		scroll.scrollToBottom();
+	};
+
 	// handle click event
 	handleClick = event => {
 		event.preventDefault();
@@ -87,6 +93,8 @@ class App extends Component {
 				secondThanks: this.state.secondThanks,
 				thirdThanks: this.state.thirdThanks
 			});
+
+			scroll.scrollToBottom();
 		}
 	};
 
@@ -98,7 +106,7 @@ class App extends Component {
 			showCancelButton: true,
 			confirmButtonColor: '#3498db',
 			cancelButtonColor: '#d33',
-			confirmButtonText: 'Yes, delete it!'			
+			confirmButtonText: 'Yes, delete it!'
 		}).then(result => {
 			if (result.value) {
 				this.state.dbRef.child(entryId).remove();
